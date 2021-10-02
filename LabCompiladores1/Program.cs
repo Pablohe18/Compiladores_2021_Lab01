@@ -8,7 +8,7 @@ namespace LabCompiladores1
         {
             string regexp = Console.ReadLine();
             Scanner scanner = new Scanner(regexp);
-
+            
             Token nextToken = scanner.GetToken();
             while (nextToken.Tag != TokenType.EOF)
             {
@@ -17,6 +17,7 @@ namespace LabCompiladores1
                   nextToken.Value);
                 nextToken = scanner.GetToken();
             }
+
             Parser parser = new Parser();
                 if (parser.Parse(regexp))
                 {

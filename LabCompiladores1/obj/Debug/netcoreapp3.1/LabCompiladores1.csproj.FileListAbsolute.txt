@@ -17,7 +17,6 @@ C:\Users\carlo\Desktop\Repo\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompilad
 C:\Users\carlo\Desktop\Repo\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.runtimeconfig.dev.json
 C:\Users\carlo\Desktop\Repo\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.dll
 C:\Users\carlo\Desktop\Repo\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.pdb
-C:\Users\carlo\Desktop\Repo\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.csproj.AssemblyReference.cache
 C:\Users\carlo\Desktop\Repo\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.AssemblyInfoInputs.cache
 C:\Users\carlo\Desktop\Repo\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.AssemblyInfo.cs
 C:\Users\carlo\Desktop\Repo\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.csproj.CoreCompileInputs.cache
