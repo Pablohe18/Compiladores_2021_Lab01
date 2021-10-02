@@ -6,87 +6,117 @@ namespace LabCompiladores1
 {
     class Parser
     {
+        public bool error = false;
         Scanner _scanner;
         Token _token;
-        private void TP()
+        
+        private void E()
         {
-
+            switch (_token.Tag)
+            {
+                case TokenType.Numero:
+                case TokenType.Resta:
+                case TokenType.LParen:
+                    T();
+                    EP();
+                    break;
+                default:
+                    break;
+            }
         }
+
+        private void EP()
+        {
+            switch (_token.Tag)
+            {
+                case TokenType.Suma:
+                    Match(TokenType.Suma);
+                    T();
+                    EP();
+                    break;
+                case TokenType.Resta:
+                    T();
+                    EP();
+                    break;
+                case TokenType.RParen:
+                case TokenType.EOF:
+                    Match(TokenType.RParen);
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private void T()
         {
             switch (_token.Tag)
             {
+                case TokenType.Numero:
+                case TokenType.Resta:
                 case TokenType.LParen:
-                case TokenType.Null:
-                case TokenType.Empty:
-                case TokenType.Symbol:
-                    Match(TokenType.Union);
-                    F();
+                    G();
                     TP();
                     break;
                 default:
                     break;
             }
         }
-        private void FP()
+
+        private void TP()
         {
             switch (_token.Tag)
             {
-                case TokenType.Plus:
-                case TokenType.Star:
-                case TokenType.Optional:
-                    Match(_token.Tag);
-                    FP();
+                case TokenType.Multiplicacion:
+                    Match(TokenType.Multiplicacion);
+                    G();
+                    TP();
                     break;
-
+                case TokenType.Division:
+                    Match(TokenType.Division);
+                    G();
+                    TP();
+                    break;
+                case TokenType.Suma:
+                case TokenType.Resta:
+                case TokenType.RParen:
+                case TokenType.EOF:
+                    Match(_token.Tag);
+                    break;
                 default:
                     break;
             }
         }
+
+        private void G()
+        {
+            switch (_token.Tag)
+            {
+                case TokenType.Numero:
+                    F();
+                    break;
+                case TokenType.Resta:
+                    Match(TokenType.Resta);
+                    F();
+                    break;
+                case TokenType.LParen:
+                    F();
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private void F()
         {
             switch (_token.Tag)
             {
+                case TokenType.Numero:
+                    Match(TokenType.Numero);
+                    break;
                 case TokenType.LParen:
                     Match(TokenType.LParen);
                     E();
                     Match(TokenType.RParen);
-                    FP();
-                    break;
-
-                case TokenType.Symbol:
-                case TokenType.Null:
-                case TokenType.Empty:
-                        Match(_token.Tag);
-                    FP();
-                    break;
-                default:
-                    break;
-            }
-        }
-        private void EP()
-        {
-            switch (_token.Tag)
-            {
-                case TokenType.Union:
-                    Match(TokenType.Union);
-                    T();
-                    EP();
-                    break;
-                default:
-                    break;
-            }
-        }
-        private void E()
-        {
-            switch (_token.Tag)
-            {
-                case TokenType.LParen:
-                case TokenType.Empty:
-                case TokenType.Null:
-                case TokenType.Symbol:
-                    T();
-                    EP();
                     break;
                 default:
                     break;
@@ -100,24 +130,31 @@ namespace LabCompiladores1
             }
             else
             {
-                throw new Exception("ERROR DE SINTAXIS");
+                error = true;
             }
         }
-        public void Parse(string regexp)
+        public bool Parse(string regexp)
         {
             _scanner = new Scanner(regexp + (char)TokenType.EOF);
             _token = _scanner.GetToken();
-            switch (_token.Tag)
+            if (_token.Tag == TokenType.err)
             {
-                case TokenType.LParen:
-                case TokenType.Empty:
-                case TokenType.Null:
-                case TokenType.Symbol:
-                    E();
-                    break;
-                default:
-                    break;
+                Console.WriteLine("ERROR EN ANALISIS LEXICO");
             }
+            else
+            {
+                switch (_token.Tag)
+                {
+                    case TokenType.Numero:
+                    case TokenType.Resta:
+                    case TokenType.LParen:
+                        E();
+                        break;
+                    default:
+                        break;
+                }
+            }          
+            return error;
             Match(TokenType.EOF);
         }
     }

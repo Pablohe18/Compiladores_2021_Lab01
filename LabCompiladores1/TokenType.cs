@@ -6,15 +6,15 @@ namespace LabCompiladores1
 {
     public enum TokenType
     {
-        Plus = '+',
-        Star = '*',
-        Union = '|',
-        Optional = '?',
+        Multiplicacion = '*',
+        Suma = '+',
         LParen = '(',
         RParen = ')',
+        Resta = '-',
+        Division = '/',
         EOF = (char)0,
         Empty = (char)1,
-        Null = (char)2,
-        Symbol = (char)3
+        err = (char)2,
+        Numero = (char)3
     }
 }

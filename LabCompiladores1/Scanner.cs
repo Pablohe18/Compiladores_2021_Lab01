@@ -9,6 +9,7 @@ namespace LabCompiladores1
         private string _regexp = "";
         private int _index = 0;
         private int _state = 0;
+        private string _error = "";
 
         public Scanner(string regexp)
         {
@@ -34,57 +35,35 @@ namespace LabCompiladores1
 
                         switch (peek)
                         {
-                            case '\\':
-                                _state = 1;
-                                break;
-
-
                             case (char)TokenType.LParen:
                             case (char)TokenType.RParen:
-                            case (char)TokenType.Optional:
-                            case (char)TokenType.Plus:
-                            case (char)TokenType.Star:
-                            case (char)TokenType.Union:
+                            case (char)TokenType.Multiplicacion:
+                            case (char)TokenType.Suma:
+                            case (char)TokenType.Resta:
+                            case (char)TokenType.Division:
                             case (char)TokenType.EOF:
                                 tokenFound = true;
                                 result.Tag = (TokenType)peek;
                                 break;
                             default:
-                                tokenFound = true;
-                                result.Tag = TokenType.Symbol;
-                                result.Value = peek;
+                                int valor;
+                                bool esNumero = int.TryParse(peek.ToString(), out valor);
+                                if (esNumero)
+                                {
+                                    tokenFound = true;
+                                    result.Tag = TokenType.Numero;
+                                    result.Value = peek;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Lex Error TOKEN NO RECONOCIDO: " + peek.ToString());
+                                    result.Tag = TokenType.err;
+                                    return result;
+                                }
                                 break;
                         }
                         _index++;
                         break;
-                    case 1:
-                        switch (peek)
-                        {
-                            case (char)TokenType.LParen:
-                            case (char)TokenType.RParen:
-                            case (char)TokenType.Optional:
-                            case (char)TokenType.Plus:
-                            case (char)TokenType.Star:
-                            case (char)TokenType.Union:
-                            case '\\':
-                            case ' ':
-                                tokenFound = true;
-                                result.Tag = TokenType.Symbol;
-                                result.Value = peek;
-                                break;
-                            case 'E':
-                                tokenFound = true;
-                                result.Tag = TokenType.Null;
-                                break;
-                            case '0':
-                                tokenFound = true;
-                                result.Tag = TokenType.Empty;
-                                break;
-                            default:
-                                throw new Exception("Lex Error");
-                        }
-                        break;
-
                     default:
                         break;
                 }//Switch
