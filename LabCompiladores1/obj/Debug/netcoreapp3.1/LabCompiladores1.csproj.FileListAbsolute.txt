@@ -1,0 +1,13 @@
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.exe
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.deps.json
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.runtimeconfig.json
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.runtimeconfig.dev.json
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.dll
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\bin\Debug\netcoreapp3.1\LabCompiladores1.pdb
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.csproj.AssemblyReference.cache
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.AssemblyInfoInputs.cache
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.AssemblyInfo.cs
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.csproj.CoreCompileInputs.cache
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.dll
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.pdb
+C:\Users\carlo\source\repos\LabCompiladores1\LabCompiladores1\obj\Debug\netcoreapp3.1\LabCompiladores1.genruntimeconfig.cache
