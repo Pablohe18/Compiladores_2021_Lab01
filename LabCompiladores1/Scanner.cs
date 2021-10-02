@@ -57,7 +57,6 @@ namespace LabCompiladores1
                                 else
                                 {
                                     Console.WriteLine("Lex Error TOKEN NO RECONOCIDO: " + peek.ToString());
-                                    result.Tag = TokenType.err;
                                     return result;
                                 }
                                 break;

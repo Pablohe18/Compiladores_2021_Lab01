@@ -14,7 +14,6 @@ namespace LabCompiladores1
         Division = '/',
         EOF = (char)0,
         Empty = (char)1,
-        err = (char)2,
         Numero = (char)3
     }
 }
