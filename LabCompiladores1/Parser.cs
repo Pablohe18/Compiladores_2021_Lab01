@@ -137,12 +137,6 @@ namespace LabCompiladores1
         {
             _scanner = new Scanner(regexp + (char)TokenType.EOF);
             _token = _scanner.GetToken();
-            if (_token.Tag == TokenType.err)
-            {
-                Console.WriteLine("ERROR EN ANALISIS LEXICO");
-            }
-            else
-            {
                 switch (_token.Tag)
                 {
                     case TokenType.Numero:
@@ -153,9 +147,7 @@ namespace LabCompiladores1
                     default:
                         break;
                 }
-            }          
             return error;
-            Match(TokenType.EOF);
         }
     }
 }

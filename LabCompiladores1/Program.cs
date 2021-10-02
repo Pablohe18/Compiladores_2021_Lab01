@@ -8,7 +8,16 @@ namespace LabCompiladores1
         {
             string regexp = Console.ReadLine();
             Scanner scanner = new Scanner(regexp);
-                Parser parser = new Parser();
+
+            Token nextToken = scanner.GetToken();
+            while (nextToken.Tag != TokenType.EOF)
+            {
+                Console.WriteLine("TOKEN: {0}, VALOR {1}",
+                  nextToken.Tag,
+                  nextToken.Value);
+                nextToken = scanner.GetToken();
+            }
+            Parser parser = new Parser();
                 if (parser.Parse(regexp))
                 {
                     Console.WriteLine("ERROR DE ANALISIS SINTACTICO");

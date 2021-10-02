@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\carlo\\source\\repos\\LabCompiladores1\\LabCompiladores1\\LabCompiladores1.csproj",
+      "projectUniqueName": "C:\\Users\\carlo\\Desktop\\Repo\\LabCompiladores1\\LabCompiladores1.csproj",
       "projectName": "LabCompiladores1",
-      "projectPath": "C:\\Users\\carlo\\source\\repos\\LabCompiladores1\\LabCompiladores1\\LabCompiladores1.csproj",
+      "projectPath": "C:\\Users\\carlo\\Desktop\\Repo\\LabCompiladores1\\LabCompiladores1.csproj",
       "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\carlo\\source\\repos\\LabCompiladores1\\LabCompiladores1\\obj\\",
+      "outputPath": "C:\\Users\\carlo\\Desktop\\Repo\\LabCompiladores1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
